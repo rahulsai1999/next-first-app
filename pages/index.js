@@ -1,5 +1,8 @@
 export default function Blog(){
     return(
-        <div>Hello dudes</div>
+        <div>
+        <p>Hello dudes</p>
+        <a href="/post/hsr-layout">HSR Layout</a>
+        </div>  
     )
 }

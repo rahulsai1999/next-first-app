@@ -48,7 +48,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 function Blog() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello dudes");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello dudes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/post/hsr-layout"
+  }, "HSR Layout"));
 }
 
 /***/ }),
