@@ -1,5 +1,6 @@
 var app=require("express")();
 var next=require("next");
+var logger = require('morgan');
 var mongoose=require("mongoose");
 var passport=require("passport");
 var localStrategy=require("passport-local");
@@ -11,6 +12,7 @@ var handle = ap.getRequestHandler()
 
 var User=require("./models/User");
 
+app.use(logger('dev'));
 app.use(require("express-session")({
     secret:'nextjs',
     resave:false,
@@ -31,48 +33,58 @@ ap.prepare().then(()=>{
         ap.render(req,res,actualPage);
     });
 
-    app.get("/login",function(req,res){
-        res.render("login");
+    app.get("/post/:id",(req,res)=>{
+        var actualPage='/post'
+        var queryParams= {title:req.params.id}
+        ap.render(req,res,actualPage,queryParams)
     });
 
-    app.get("/signup",function(req,res){
-        res.render("signup")
-    })
-
-    app.post("/register",function(req,res){
-        User.register(new User(
-        {username:req.body.username}),
-        req.body.password,
-            function(err,user){
-                if(err)
-                {
-                    console.log(err);
-                    res.render("signup");
-                }
-            passport.authenticate("local")(req,res,function(){
-                res.redirect("/login");
-            });
-        });
+    app.get("*",(req,res)=>{
+        return handle(req,res)
     });
 
-    app.post("/login",passport.authenticate("local",{
-        failureRedirect:"/login"}),
-        function(req,res){
-            res.redirect("/users/"+req.user.username);
-        });
+    // app.get("/login",function(req,res){
+    //     res.render("login");
+    // });
 
-    app.get("/logout", function(req, res){
-        req.logout();
-        userr="";
-        res.redirect("/");
-    });  
+    // app.get("/signup",function(req,res){
+    //     res.render("signup")
+    // })
 
-    function isLoggedIn(req, res, next){
-        if(req.isAuthenticated()){
-            return next();
-        }
-        res.redirect("/login");
-    }
+    // app.post("/register",function(req,res){
+    //     User.register(new User(
+    //     {username:req.body.username}),
+    //     req.body.password,
+    //         function(err,user){
+    //             if(err)
+    //             {
+    //                 console.log(err);
+    //                 res.render("signup");
+    //             }
+    //         passport.authenticate("local")(req,res,function(){
+    //             res.redirect("/login");
+    //         });
+    //     });
+    // });
+
+    // app.post("/login",passport.authenticate("local",{
+    //     failureRedirect:"/login"}),
+    //     function(req,res){
+    //         res.redirect("/users/"+req.user.username);
+    //     });
+
+    // app.get("/logout", function(req, res){
+    //     req.logout();
+    //     userr="";
+    //     res.redirect("/");
+    // });  
+
+    // function isLoggedIn(req, res, next){
+    //     if(req.isAuthenticated()){
+    //         return next();
+    //     }
+    //     res.redirect("/login");
+    // }
 
     //trash
     app.get("*",function(req,res){
