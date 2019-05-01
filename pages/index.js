@@ -1,8 +1,11 @@
+import Header from '../components/header'
 export default function Blog(){
     return(
         <div>
-        <p>Hello dudes</p>
-        <a href="/post/hsr-layout">HSR Layout</a>
+            <Header/>
+            <p>Hello dudes</p>
+            <button>XX</button>
+            <a href="/post/hsr-layout">HSR Layout</a>
         </div>  
     )
 }
