@@ -3617,14 +3617,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Blog() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello dudes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "XX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    class: "btn btn-primary"
+  }, "Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/post/hsr-layout"
-  }, "HSR Layout"));
+  }, "HSR Layout")));
 }
 
 /***/ }),
 
-/***/ 0:
+/***/ 4:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRahul%5CDesktop%5Cnext-first-app%5Cpages%5Cindex.js ***!
   \***********************************************************************************************************************************/
@@ -3647,5 +3651,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

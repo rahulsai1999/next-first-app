@@ -1,4 +1,5 @@
 import { withRouter } from 'next/router'
+import Header from '../components/header';
 
 //use the api here to get the details from the title query from the props as given below
 
@@ -10,7 +11,8 @@ const Content = withRouter(props => (
   ))
 
 const Page = () => (
-  <div>
+  <div class="container">
+    <Header/>
     <Content></Content>
   </div>
 )

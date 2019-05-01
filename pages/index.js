@@ -3,9 +3,11 @@ export default function Blog(){
     return(
         <div>
             <Header/>
-            <p>Hello dudes</p>
-            <button>XX</button>
+            <div class="container">
+            <p>Hello</p>
+            <button class="btn btn-primary">Button</button>
             <a href="/post/hsr-layout">HSR Layout</a>
+            </div>
         </div>  
     )
 }
