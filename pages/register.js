@@ -1,5 +1,5 @@
 import Header from "../components/header";
-import { grey, gray } from "ansi-colors";
+import '../styles.css'
 
 export default ()=>{
     return(

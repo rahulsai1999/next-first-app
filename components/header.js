@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import '../styles.css'
 
 function Header() {
   return (
