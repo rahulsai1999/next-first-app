@@ -41,6 +41,10 @@ ap.prepare().then(()=>{
         ap.render(req,res,actualPage,queryParams)
     });
 
+    app.get("/trans",(req,res)=>{
+        ap.render(req,res,'/transition')
+    })
+
     app.get("/protected",isLoggedIn,(req,res)=>{
         var actualPage='/prot'
         ap.render(req,res,actualPage)
