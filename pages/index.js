@@ -1,10 +1,6 @@
-import Header from '../components/header'
-import "../styles.css"
-
 export default function Blog(){
     return(
         <div>
-            <Header/>
             <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
             <div class="inner">

@@ -45,6 +45,10 @@ ap.prepare().then(()=>{
         ap.render(req,res,'/transition')
     })
 
+    app.get("/relpage",(req,res)=>{
+        ap.render(req,res,'/reloadch')
+    })
+
     app.get("/protected",isLoggedIn,(req,res)=>{
         var actualPage='/prot'
         ap.render(req,res,actualPage)

@@ -1,9 +1,6 @@
-import Header from "../components/header";
-import '../styles.css'
 export default ()=>{
     return(
         <div>
-            <Header/>
             <div class="container" style={{padding:40,marginTop:50,border:'1px solid grey'}}>
             <h3 style={{textAlign:"center"}}>Login</h3>
             <form action="/login" method="POST">

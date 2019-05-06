@@ -1,8 +1,11 @@
 import { Transition } from 'react-transition-group';
-import Header from '../components/header';
 
 
 export default ()=>{
-  <Header/>
+  <div>
+    <div class="container">
+    <p>Transition remaining</p>
+    </div>
+  </div>
 
 }
