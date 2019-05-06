@@ -1,8 +1,7 @@
 const ListComp=({data})=>{
-    console.log("PROPS",data)
     return(
         <div>
-            <p>{data.length}</p>
+            <p>Successive Render: {data.length+100}</p>
         </div>
     )
 }

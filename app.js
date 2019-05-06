@@ -1,6 +1,5 @@
 var app=require("express")();
 var next=require("next");
-var logger = require('morgan');
 var mongoose=require("mongoose");
 var passport=require("passport");
 var bodyParser = require('body-parser');
@@ -13,7 +12,6 @@ var handle = ap.getRequestHandler()
 mongoose.connect("mongodb://admin:admin83@ds151012.mlab.com:51012/revcentral");
 var User=require("./models/User");
 
-app.use(logger('dev'));
 app.use(require("express-session")({
     secret:'nextjs',
     resave:false,
@@ -35,10 +33,9 @@ ap.prepare().then(()=>{
         ap.render(req,res,actualPage);
     });
 
-    app.get("/post/:id",(req,res)=>{
+    app.get("/post",(req,res)=>{
         var actualPage='/post'
-        var queryParams= {title:req.params.id}
-        ap.render(req,res,actualPage,queryParams)
+        ap.render(req,res,actualPage,req.query)
     });
 
     app.get("/trans",(req,res)=>{
@@ -46,7 +43,7 @@ ap.prepare().then(()=>{
     })
 
     app.get("/relpage",(req,res)=>{
-        ap.render(req,res,'/reloadch')
+        ap.render(req,res,'/reloadch',req.query)
     })
 
     app.get("/protected",isLoggedIn,(req,res)=>{
